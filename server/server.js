@@ -21,7 +21,7 @@ io.on('connection', (socket) => {
 // });
 socket.on('createMessage', (message) => {
   console.log("CreateMessage",message);
-  socket.emit('newMessage',{
+  io.emit('newMessage',{
     from : message.from,
     text : message.text,
     completedAt: new Date().getTime()
