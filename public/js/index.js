@@ -3,10 +3,10 @@ var socket = io();
     console.log("Connected");
   });
 
-  socket.emit('createMessage', {
-     to:'sun@gmail.com',
-     text: 'Have a nice day!'
-  });
+  // socket.emit('createMessage', {
+  //    to:'sun@gmail.com',
+  //    text: 'Have a nice day!'
+  // });
 
  socket.on('disconnect', function() {
    console.log("Disconnected");
