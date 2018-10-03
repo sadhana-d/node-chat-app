@@ -1,5 +1,5 @@
 var socket = io();
-  socket.on('connect', function() {
+  socket.on("connect", function() {
     console.log("Connected");
   });
 
@@ -8,13 +8,13 @@ var socket = io();
   //    text: 'Have a nice day!'
   // });
 
- socket.on('disconnect', function() {
+ socket.on("disconnect", function() {
    console.log("Disconnected");
  });
 
  socket.on('newMessage', function(message){
    console.log(message);
-   var li = jQuery('<li></li>');
+   var li = jQuery("<li></li>");
     li.text(`${message.from}: ${message.text}`);
    jQuery("#messages").append(li);
  });
@@ -26,11 +26,11 @@ var socket = io();
  //    console.log("Got it ack! This is from Server");
  // });
 
- jQuery('#message-form').on('submit', function(e){
+ jQuery("#message-form").on("submit", function(e){
    e.preventDefault();
-    socket.emit('createMessage',{
-     from: 'User',
-     text: jQuery('[name=message]').val()
+    socket.emit("createMessage",{
+     from: "User",
+     text: jQuery("[name=message]").val()
    }, function(){
 
    });

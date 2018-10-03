@@ -4,7 +4,6 @@ var generateMessage = (from, text) => {
     text,
     createdAt : new Date().getTime()
   };
-console.log("Coming to generate msg definition");
 };
 
 module.exports = {generateMessage};
